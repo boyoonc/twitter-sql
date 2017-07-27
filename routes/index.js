@@ -24,13 +24,13 @@ module.exports = function makeRouterWithSockets (io) {
         client.query('SELECT * FROM users', function(err, result){
               if(err) return console.log(err);
               var users = result.rows;
-              return users
-        })
 
-    res.render('index', { 
+
+              res.render('index', { 
       title: 'Twitter.js', tweets: tweets, showForm: true, users: users
 
     });
+        })
   });
   }
 
